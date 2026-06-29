@@ -15,6 +15,21 @@ document.getElementById("startBtn").addEventListener("click", function () {
 });
 document.addEventListener("click", function (e) {
   if (e.target && e.target.id === "nextBtn") {
-    alert("Next page coming next step 😄");
+
+    const cover = document.querySelector(".cover");
+
+    cover.classList.add("hide");
+
+    setTimeout(() => {
+
+      cover.innerHTML = `
+        <h1>Page 2 🤍</h1>
+        <p>This is where the memories start...</p>
+        <button id="nextBtn">Next →</button>
+      `;
+
+      cover.classList.remove("hide");
+
+    }, 500);
   }
 });
