@@ -1,55 +1,51 @@
 const pages = [
   {
     type: "intro",
-    title: "Hi Birthday Boy. 🤍",
+    title: "Hi Baby. 🤍",
     text: "For my jaan ❤️"
   },
 
   {
     type: "photo",
-    title: "Chapter One 🤍",
     image: "images/photo1.jpeg",
     caption: "my batman 🦇🤍"
   },
 
   {
     type: "photo",
-    title: "Chapter Two 🤍",
     image: "images/photo2.jpeg",
     caption: "also my superman 🦸🏻‍♂️🤍"
   },
 
   {
     type: "photo",
-    title: "Chapter Three 🤍",
     image: "images/photo3.jpeg",
     caption: "cutest kid ever 🧸🤍"
   },
 
   {
     type: "photo",
-    title: "Chapter Four 🤍",
     image: "images/photo4.jpeg",
     caption: "forever my baby ♡"
   },
 
   {
     type: "letter",
-    title: "A little letter for you 🤍",
+    title: "Digi letter cuz i can't physically write one",
     text: `Happy Birthday, my jaan.
 
-Today is all about you.
+Thank you for completing me baby.
 
-Even though this is just a website, every page is made with love.
+I wish i could do more, this aint my feild but i tried.
 
-Thank you for being my comfort, my peace, my favourite person.
+Thank you for being my comfort, my peace, my favourite person,loml,my bf honestly everything.
 
-I love you. 🤍`
+I love you more than ive ever loved anything,anyone ❤️`
   },
 
   {
     type: "end",
-    title: "The End 🤍",
+    title: "Lastly",
     text: "🤍"
   }
 ];
