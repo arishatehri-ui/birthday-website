@@ -57,3 +57,35 @@ img {
   display: block;
   margin: 0 auto 10px auto;
 }
+/* tape effect for first card */
+.tape {
+  position: relative;
+}
+
+/* top-left tape */
+.tape::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: rgba(255,255,255,0.7);
+  top: -10px;
+  left: 20px;
+  transform: rotate(-10deg);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* top-right tape */
+.tape::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: rgba(255,255,255,0.7);
+  top: -10px;
+  right: 20px;
+  transform: rotate(12deg);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
