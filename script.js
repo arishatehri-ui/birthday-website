@@ -45,7 +45,6 @@ I love you more than ive ever loved anything,anyone ❤️`
 
   {
     type: "end",
-    title: "Lastly",
     text: "🤍"
   }
 ];
@@ -56,12 +55,15 @@ const cover = document.querySelector(".cover");
 const pageBox = document.querySelector(".page");
 const openBtn = document.getElementById("openBtn");
 
+/* OPEN */
 openBtn.addEventListener("click", () => {
   document.querySelector(".cover").classList.add("hidden");
   pageBox.classList.remove("hidden");
+  current = 0;
   renderPage();
 });
 
+/* RENDER */
 function renderPage() {
   const page = pages[current];
 
@@ -77,7 +79,6 @@ function renderPage() {
 
   else if (page.type === "photo") {
     html = `
-      <h1>${page.title}</h1>
       <img src="${page.image}" />
       <p>${page.caption}</p>
       <button id="nextBtn">Next</button>
@@ -94,7 +95,6 @@ function renderPage() {
 
   else if (page.type === "end") {
     html = `
-      <h1>${page.title}</h1>
       <p>${page.text}</p>
     `;
   }
@@ -102,6 +102,7 @@ function renderPage() {
   pageBox.innerHTML = html;
 }
 
+/* NEXT */
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "nextBtn") {
     current++;
