@@ -62,30 +62,58 @@ img {
   position: relative;
 }
 
-/* top-left tape */
-.tape::before {
+/* shared tape style */
+.tape::before,
+.tape::after {
   content: "";
   position: absolute;
-  width: 60px;
-  height: 20px;
-  background: rgba(255,255,255,0.7);
-  top: -10px;
-  left: 20px;
-  transform: rotate(-10deg);
+  width: 70px;
+  height: 24px;
+
+  /* realistic masking tape base */
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.85),
+    rgba(235,235,235,0.65),
+    rgba(255,255,255,0.75)
+  );
+
   border-radius: 3px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  /* slight texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.03) 0px,
+      rgba(0,0,0,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  /* realism */
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.15),
+    inset 0 1px 2px rgba(255,255,255,0.7);
+  opacity: 0.95;
+}
+
+/* top-left tape */
+.tape::before {
+  top: -12px;
+  left: 18px;
+  transform: rotate(-12deg);
 }
 
 /* top-right tape */
 .tape::after {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 20px;
-  background: rgba(255,255,255,0.7);
-  top: -10px;
-  right: 20px;
-  transform: rotate(12deg);
-  border-radius: 3px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  top: -12px;
+  right: 18px;
+  transform: rotate(10deg);
 }
