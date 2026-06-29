@@ -2,7 +2,7 @@ const pages = [
   {
     type: "intro",
     title: "Hi Baby. 🤍",
-    text: "Happy Birthday ♡ a lil something for you cuz you will always be my..."
+    text: "Happy Birthday ♡ a lil something for you cuz you will always be..."
   },
 
   {
@@ -20,13 +20,13 @@ const pages = [
   {
     type: "photo",
     image: "images/photo3.jpeg",
-    caption: "cutest kid ever 🧸🤍"
+    caption: " and the cutest kid ever 🧸🤍"
   },
 
   {
     type: "photo",
     image: "images/photo4.jpeg",
-    caption: "forever my baby ♡"
+    caption: "and forever my baby ♡"
   },
 
   {
