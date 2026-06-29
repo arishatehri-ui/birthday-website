@@ -2,7 +2,7 @@ const pages = [
   {
     type: "intro",
     title: "Hi Birthday Boy. 🤍",
-    text: "I couldn't wrap this in paper... so I wrapped it in code."
+    text: "For my jaan ❤️"
   },
 
   {
@@ -40,9 +40,9 @@ const pages = [
 
 Today is all about you.
 
-This scrapbook may be code, but every page is real feeling.
+Even though this is just a website, every page is made with love.
 
-Thank you for being my comfort, my chaos, my everything.
+Thank you for being my comfort, my peace, my favourite person.
 
 I love you. 🤍`
   },
@@ -50,36 +50,21 @@ I love you. 🤍`
   {
     type: "end",
     title: "The End 🤍",
-    text: "one last surprise... 🤍"
+    text: "🤍"
   }
 ];
 
 let current = 0;
 
 const cover = document.querySelector(".cover");
+const pageBox = document.querySelector(".page");
+const openBtn = document.getElementById("openBtn");
 
-// initial load
-renderPage();
-
-// TAP ANYWHERE
-document.addEventListener("click", () => {
-  nextPage();
+openBtn.addEventListener("click", () => {
+  document.querySelector(".cover").classList.add("hidden");
+  pageBox.classList.remove("hidden");
+  renderPage();
 });
-
-function nextPage() {
-  current++;
-
-  if (current >= pages.length) {
-    current = pages.length - 1;
-  }
-
-  cover.classList.add("fade");
-
-  setTimeout(() => {
-    renderPage();
-    cover.classList.remove("fade");
-  }, 250);
-}
 
 function renderPage() {
   const page = pages[current];
@@ -90,25 +75,24 @@ function renderPage() {
     html = `
       <h1>${page.title}</h1>
       <p>${page.text}</p>
+      <button id="nextBtn">Next</button>
     `;
   }
 
   else if (page.type === "photo") {
     html = `
       <h1>${page.title}</h1>
-
-      <div class="memory-page">
-        <img src="${page.image}" class="photo"/>
-        <p class="caption">${page.caption}</p>
-        <div class="doodles">✦ ♡ ✿</div>
-      </div>
+      <img src="${page.image}" />
+      <p>${page.caption}</p>
+      <button id="nextBtn">Next</button>
     `;
   }
 
   else if (page.type === "letter") {
     html = `
       <h1>${page.title}</h1>
-      <p class="letter">${page.text.replace(/\n/g, "<br>")}</p>
+      <p>${page.text.replace(/\n/g, "<br>")}</p>
+      <button id="nextBtn">Next</button>
     `;
   }
 
@@ -116,9 +100,15 @@ function renderPage() {
     html = `
       <h1>${page.title}</h1>
       <p>${page.text}</p>
-      <div style="font-size:40px;">🤍</div>
     `;
   }
 
-  cover.innerHTML = html;
+  pageBox.innerHTML = html;
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "nextBtn") {
+    current++;
+    renderPage();
+  }
+});
