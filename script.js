@@ -2,7 +2,7 @@ const pages = [
   {
     type: "intro",
     title: "Hi Baby. 🤍",
-    text: "For my jaan ❤️"
+    text: "Happy Birthday ♡"
   },
 
   {
