@@ -36,7 +36,7 @@ const pages = [
 
 Thank you for completing me baby.
 
-I wish i could do more, this aint my feild but i tried.
+I wish i could do more, this aint my field but i tried.
 
 Thank you for being my comfort, my peace, my favourite person,loml,my bf honestly everything.
 
