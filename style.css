@@ -2,62 +2,47 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5e9dc;
-  height: 100vh;
-  overflow: hidden;
 }
 
-.screen {
+/* COVER PAGE */
+.cover {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 30px;
-  box-sizing: border-box;
-  flex-direction: column;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-#text {
-  font-size: 22px;
-  line-height: 1.6;
-  max-width: 600px;
-}
-
-#hint {
-  margin-top: 20px;
-  font-size: 12px;
-  opacity: 0.6;
-}
-.cover {
+/* PAGE */
+.page {
   height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 30px;
-  box-sizing: border-box;
-  transition: opacity 0.25s ease;
+  padding: 20px;
 }
 
-.fade {
-  opacity: 0;
+/* HIDDEN */
+.hidden {
+  display: none;
 }
 
-.photo {
+/* IMAGE */
+img {
   width: 250px;
-  border-radius: 12px;
+  border-radius: 10px;
   margin: 10px 0;
-}
-
-.caption {
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
-.letter {
-  max-width: 600px;
-  line-height: 1.6;
 }
