@@ -104,18 +104,17 @@ img {
   opacity: 0.95;
 }
 
-/* top-left tape */
+/* single top-left tape */
 .tape::before {
   top: -12px;
   left: 18px;
+  width: 90px;
   transform: rotate(-12deg);
 }
 
-/* top-right tape */
+/* no top-right tape */
 .tape::after {
-  top: -12px;
-  right: 18px;
-  transform: rotate(10deg);
+  display: none;
 }
 .last-tab {
   display: flex;
