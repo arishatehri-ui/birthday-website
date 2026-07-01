@@ -6,6 +6,7 @@ body {
 }
 
 /* COVER (white card) */
+
 .cover {
   height: 100vh;
   display: flex;
@@ -31,9 +32,15 @@ button {
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 /* PAGE AREA */
+
 .page {
   height: 100vh;
   display: flex;
@@ -43,14 +50,19 @@ button {
   padding: 20px;
   box-sizing: border-box;
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity .4s ease;
 }
 
 .fade {
   opacity: 0;
 }
 
-/* IMAGE FIX (no text, no weird spacing) */
+.hidden {
+  display: none;
+}
+
+/* IMAGES */
+
 img {
   width: 260px;
   border-radius: 12px;
@@ -58,74 +70,90 @@ img {
   margin: 0 auto 10px auto;
 }
 
-/* tape effect for first card */
+/* LETTER */
+
+.page p {
+  max-width: 650px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* TAPE */
+
 .tape {
   position: relative;
 }
 
-/* shared tape style */
 .tape::before,
 .tape::after {
+
   content: "";
   position: absolute;
+
   width: 70px;
   height: 24px;
 
-  /* realistic masking tape base */
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.85),
-    rgba(235,235,235,0.65),
-    rgba(255,255,255,0.75)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.85),
+      rgba(235,235,235,.65),
+      rgba(255,255,255,.75)
+    );
 
-  border-radius: 3px;
-
-  /* slight texture */
   background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.03) 0px,
-      rgba(0,0,0,0.03) 1px,
+      rgba(0,0,0,.03) 0px,
+      rgba(0,0,0,.03) 1px,
       transparent 1px,
       transparent 3px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(0,0,0,0.02) 0px,
-      rgba(0,0,0,0.02) 1px,
+      rgba(0,0,0,.02) 0px,
+      rgba(0,0,0,.02) 1px,
       transparent 1px,
       transparent 4px
     );
 
-  /* realism */
+  border-radius: 3px;
+
   box-shadow:
-    0 4px 10px rgba(0,0,0,0.15),
-    inset 0 1px 2px rgba(255,255,255,0.7);
-  opacity: 0.95;
+    0 4px 10px rgba(0,0,0,.15),
+    inset 0 1px 2px rgba(255,255,255,.7);
+
+  opacity: .95;
 }
 
-/* single top-left tape */
 .tape::before {
+
   top: -12px;
   left: 18px;
+
   width: 140px;
+
   transform: rotate(-12deg);
+
 }
 
-/* no top-right tape */
 .tape::after {
   display: none;
 }
 
-/* Last tab */
+/* LAST TAB */
+
 .last-tab {
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 18px;
+
   text-align: center;
+
 }
 
 .last-tab p {
@@ -133,11 +161,210 @@ img {
 }
 
 .gift-link {
+
   color: #7b5c4d;
   text-decoration: underline;
   font-size: 1rem;
+
 }
 
 .gift-link:hover {
-  opacity: 0.7;
+
+  opacity: .7;
+
 }
+
+/* ========================================================= */
+/* ===================== CAKE PAGE ========================== */
+/* ========================================================= */
+
+.cake-page {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+}
+
+.cake-page h1 {
+
+  margin-bottom: 60px;
+
+  color: #5f4635;
+
+  font-family: Georgia, serif;
+
+  font-size: 2rem;
+
+}
+
+.cake {
+
+  position: relative;
+
+  width: 340px;
+
+  margin: auto;
+
+  padding-top: 100px;
+
+}/* ================= CANDLES ================= */
+
+.candles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.candle {
+  width: 8px;
+  height: 38px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 4px,
+      #f5c7d5 4px,
+      #f5c7d5 8px
+    );
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+}
+
+.flame {
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 16px;
+  background: radial-gradient(circle,#fff8b0 10%,#ffbf00 60%,#ff8a00 100%);
+  border-radius: 50%;
+  animation: flicker .4s infinite alternate;
+  box-shadow: 0 0 10px #ffd65a;
+}
+
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) rotate(-2deg) scale(1);
+  }
+  to {
+    transform: translateX(-50%) rotate(2deg) scale(.9);
+  }
+}
+
+/* ================= CAKE TIERS ================= */
+
+.top,
+.middle,
+.bottom {
+  position: relative;
+  margin: auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.top {
+  width: 180px;
+  height: 95px;
+  background: linear-gradient(to bottom,#fffdf9,#f7ede2);
+  box-shadow:
+    inset 0 -8px 0 rgba(232,208,188,.6),
+    0 5px 12px rgba(0,0,0,.12);
+  z-index: 3;
+}
+
+.middle {
+  width: 250px;
+  height: 110px;
+  background: linear-gradient(to bottom,#fffaf5,#f2e3d2);
+  margin-top: -8px;
+  box-shadow:
+    inset 0 -10px 0 rgba(226,198,173,.6),
+    0 5px 12px rgba(0,0,0,.12);
+  z-index: 2;
+}
+
+.bottom {
+  width: 320px;
+  height: 125px;
+  background: linear-gradient(to bottom,#fff8f0,#edd7bf);
+  margin-top: -8px;
+  margin-bottom: 18px;
+  box-shadow:
+    inset 0 -12px 0 rgba(210,180,150,.5),
+    0 8px 18px rgba(0,0,0,.15);
+  z-index: 1;
+}
+
+/* ================= ICING ================= */
+
+.top::before,
+.middle::before,
+.bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: white;
+  border-radius: 0 0 16px 16px;
+}
+
+.top::after,
+.middle::after,
+.bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 100%;
+  height: 12px;
+  background:
+    radial-gradient(circle at 8px,#f8d7df 4px,transparent 5px)
+    repeat-x;
+  background-size: 20px 12px;
+}
+
+/* ================= CAKE BOARD ================= */
+
+.cake::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 18px;
+  background: #d8c4ab;
+  border-radius: 50%;
+  box-shadow: 0 5px 12px rgba(0,0,0,.18);
+}
+/* ================= CAKE BUTTON ================= */
+
+.cake-page button {
+  margin-top: 55px;
+  padding: 13px 34px;
+  border: none;
+  border-radius: 30px;
+  background: #7d5b45;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.cake-page button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,.2);
