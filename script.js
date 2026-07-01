@@ -116,23 +116,23 @@ function renderPage() {
       `;
     }
 
- else if (page.type === "end") {
-  html = `
-    <div class="last-tab">
-      <p style="font-size: 2rem;">${page.text}</p>
+    else if (page.type === "end") {
+      html = `
+        <div class="last-tab">
+          <p style="font-size: 2rem;">${page.text}</p>
 
-      <a href="https://digibouquet.net/create-bouquet?b=JTdCJTIyZiUyMiUzQSU1QiUyMnJvc2UlMjIlMkMlMjJjYW1lbGxpYSUyMiUyQyUyMnR1bGlwJTIyJTJDJTIybGlseSUyMiUyQyUyMnBlb255JTIyJTJDJTIybG90dXMlMjIlMkMlMjJvcmNoaWQlMjIlMkMlMjJkYWlzeSUyMiU1RCUyQyUyMmclMjIlM0ElMjJncmVlbmVyeTQlMjIlMkMlMjJjJTIyJTNBJTIyYnVybnQtZWRnZSUyMiUyQyUyMnRvJTIyJTNBJTIyUmFmaWQlMjIlMkMlMjJmciUyMiUzQSUyMkFyaWklMjIlMkMlMjJtJTIyJTNBJTIySGFwcHklMjBCaXJ0aGRheSUyMGJhYnklMkMlMjBJJTIwbG92ZSUyMHlvdSUyMHNvJTIwc28lMjBtdWNoJTIwJUYwJTlGJTkyJThCJTIyJTJDJTIyYmclMjIlM0ElMjJtaWRuaWdodC1nYXJkZW4lMjIlN0Q="
-         target="_blank"
-         class="gift-link">
-        here's something for my birthday boy ♡
-      </a>
+          <a href="https://digibouquet.net/create-bouquet?b=JTdCJTIyZiUyMiUzQSU1QiUyMnJvc2UlMjIlMkMlMjJjYW1lbGxpYSUyMiUyQyUyMnR1bGlwJTIyJTJDJTIybGlseSUyMiUyQyUyMnBlb255JTIyJTJDJTIybG90dXMlMjIlMkMlMjJvcmNoaWQlMjIlMkMlMjJkYWlzeSUyMiU1RCUyQyUyMmclMjIlM0ElMjJncmVlbmVyeTQlMjIlMkMlMjJjJTIyJTNBJTIyYnVybnQtZWRnZSUyMiUyQyUyMnRvJTIyJTNBJTIyUmFmaWQlMjIlMkMlMjJmciUyMiUzQSUyMkFyaWklMjIlMkMlMjJtJTIyJTNBJTIySGFwcHklMjBCaXJ0aGRheSUyMGJhYnklMkMlMjBJJTIwbG92ZSUyMHlvdSUyMHNvJTIwc28lMjBtdWNoJTIwJUYwJTlGJTkyJThCJTIyJTJDJTIyYmclMjIlM0ElMjJtaWRuaWdodC1nYXJkZW4lMjIlN0Q="
+             target="_blank"
+             class="gift-link">
+            here's something for my birthday boy ♡
+          </a>
 
-      <br><br>
+          <br><br>
 
-      <button id="cakeBtn">Next →</button>
-    </div>
-  `;
-}
+          <button id="cakeBtn">Next →</button>
+        </div>
+      `;
+    }
 
     pageBox.innerHTML = html;
     pageBox.classList.remove("fade");
@@ -150,8 +150,13 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "cakeBtn") {
+
+    localStorage.setItem("musicTime", music.currentTime);
+
     window.location.href = "cake.html";
+
   }
 });
