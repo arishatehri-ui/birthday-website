@@ -27,3 +27,39 @@ document.getElementById("wishBtn").addEventListener("click",()=>{
     // }, 4000);
 
 });
+function createConfetti(){
+
+    const colors=[
+        "#ff5f6d",
+        "#ffd166",
+        "#06d6a0",
+        "#4cc9f0",
+        "#c77dff",
+        "#ffffff",
+        "#f28482"
+    ];
+
+    for(let i=0;i<180;i++){
+
+        const confetti=document.createElement("div");
+        confetti.className="confetti";
+
+        confetti.style.left=Math.random()*100+"vw";
+        confetti.style.background=
+            colors[Math.floor(Math.random()*colors.length)];
+
+        confetti.style.animationDuration=
+            3+Math.random()*3+"s";
+
+        confetti.style.transform=
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },6000);
+
+    }
+
+}
