@@ -60,6 +60,11 @@ const music = document.getElementById("bgMusic");
 openBtn.addEventListener("click", () => {
   cover.style.display = "none";
   pageBox.style.display = "flex";
+
+  music.play().catch((err) => {
+    console.log("Couldn't play music:", err);
+  });
+
   current = 0;
   renderPage();
 });
