@@ -150,3 +150,8 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "cakeBtn") {
+    window.location.href = "cake.html";
+  }
+});
